@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cm2ee3wr6f1x8"]
+
+[ext_resource type="Texture2D" uid="uid://dn5pae5l6ks5r" path="res://assets/asteroid.png" id="1_7ukg5"]
+[ext_resource type="Script" uid="uid://bhjauqwxm00ts" path="res://scripts/simple_motion.gd" id="1_drdry"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwjq3"]
+radius = 18.0
+
+[node name="Asteroid" type="Node2D" unique_id=546005374]
+script = ExtResource("1_drdry")
+
+[node name="AsteroidSprite" type="Sprite2D" parent="." unique_id=220185451]
+texture = ExtResource("1_7ukg5")
+
+[node name="AsteriodArea" type="Area2D" parent="." unique_id=1519654062]
+collision_layer = 4
+collision_mask = 1
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AsteriodArea" unique_id=154610203]
+shape = SubResource("CircleShape2D_bwjq3")
+
+[connection signal="area_entered" from="AsteriodArea" to="." method="_on_asteriod_area_area_entered"]
