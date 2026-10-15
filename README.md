@@ -1,1 +1,1 @@
-[Spaseship](./Spaseship)
+[spaceship](./spaceship)
